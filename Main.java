@@ -113,7 +113,7 @@ public class Main {
                     h = Integer.parseInt(tokens[4]);
                     hr = Double.parseDouble(tokens[5]);
                     s = tokens[6];
-                    Teacher newPerson = new Teacher('T',f,l,a,h,hr,s);
+                    Person newPerson = new Person(f,l,a);
                     people.add(newPerson);
                 }
                 catch(NumberFormatException e){
