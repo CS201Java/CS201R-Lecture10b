@@ -13,7 +13,7 @@ public class Main {
         
         //CREATE A STUDENT OBJECT USING OVERLOADED CONSTRUCTOR
         Student s1 = new Student('S', "Mahomes","Patrick", 29, 3.5);
-        System.out.println(s1.toString());
+        System.out.print(s1);
 
         //CREATE A STUDENT OBJECT USING DEFAULT CONSTRUCTOR
         Student s2 = new Student();
@@ -25,8 +25,8 @@ public class Main {
 
 
         //PRINT OBJECTS 
-         System.out.printf(s1.printPerson());
-         System.out.printf(s2.printPerson());
+         System.out.print(s1);
+         System.out.print(s2);
 
         people.add(s1);
         people.add(s2);
@@ -36,16 +36,17 @@ public class Main {
             Scanner scanner = new Scanner(inFile);
 
             //input values from a file & add to people
-            if (Functions.loadArrayList(people, scanner) == -1){
-                System.out.println("Input is not valid");
-            }
+            Functions.loadArrayList(people, scanner);
             
             for (Person p : people){
-                System.out.printf(p.printPerson());
+                System.out.print(p);
             }
             System.out.println("Total People:   " + Person.totalPeople);
             System.out.println("Total Students: " + Student.totalStudent);
             System.out.println("Total Staff:    " + Staff.totalStaff);
+            System.out.println("Total Teachers: " + Teacher.totalTeachers);
+            System.out.println("Total Employees:" + Employee.totalEmployees);
+
             for (Person p : people){
                 System.out.printf(Functions.printObjects(p));
             }

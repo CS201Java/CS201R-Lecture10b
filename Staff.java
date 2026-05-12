@@ -26,8 +26,8 @@ public abstract class Staff extends Person{
     public void setHours(int h){hours = h;}
     public void setHrlyRate(double hr){this.hrlyRate = hr;}
  
-    //create the print method
-    public abstract String  printPerson();
+    @Override
+    public abstract String toString();
 
     public static int totalStaff = 0;
             

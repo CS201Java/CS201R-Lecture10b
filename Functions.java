@@ -3,12 +3,12 @@ import java.util.Scanner;
 
 public class Functions {
 
-    public static int loadArrayList(ArrayList<Person> people, Scanner input){
+    public static void loadArrayList(ArrayList<Person> people, Scanner input){
 
         String inputLine;
         char t;
         int a, h;
-        double g, hr;
+        double g, hr, v;
         String f, l, s;
 
  
@@ -19,11 +19,17 @@ public class Functions {
 
             //check that the number of tokens includes row & colum
             if (tokens[0].equals("P") && tokens.length < 4){
-                return -1;
+                System.out.println("Input is invalid: " + inputLine);
+                continue;
             } 
             if (tokens[0].equals("S") && tokens.length < 5){
-                return -1;
+                System.out.println("Input is invalid: " + inputLine);
+                continue;
             } 
+            if (tokens[0].equals("T") && tokens.length < 7){
+                System.out.println("Input is invalid: " + inputLine);
+                continue;
+            }
             f = tokens[2];
             l = tokens[1];
 
@@ -32,7 +38,6 @@ public class Functions {
                     a = Integer.parseInt(tokens[3]);
                     Person newPerson = new Person(f,l,a);
                     people.add(newPerson);
-
                 }
                 catch(NumberFormatException e){
                     System.out.println("Error in the line: " + inputLine);
@@ -55,17 +60,27 @@ public class Functions {
                     h = Integer.parseInt(tokens[4]);
                     hr = Double.parseDouble(tokens[5]);
                     s = tokens[6];
-                    Person newPerson = new Person(f,l,a);
+                    Teacher newPerson = new Teacher('T',f,l,a, h, hr, s);
                     people.add(newPerson);
                 }
                 catch(NumberFormatException e){
                     System.out.println("Error in the line: " + inputLine);
                 }
             }
-
+            else if (tokens[0].equals("E")){
+                try{
+                    a = Integer.parseInt(tokens[3]);
+                    h = Integer.parseInt(tokens[4]);
+                    hr = Double.parseDouble(tokens[5]);
+                    v = Double.parseDouble(tokens[6]);
+                    Employee newPerson = new Employee('E',f,l,a, h, hr, v);
+                    people.add(newPerson);
+                }
+                catch(NumberFormatException e){
+                    System.out.println("Error in the line: " + inputLine);
+                }
+            }
        }
-                   
-       return 1;
     }
 
     public static String printObjects(Person p){

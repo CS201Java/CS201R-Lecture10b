@@ -1,8 +1,7 @@
 P,Bunny,Bugs,54,none
 P,Sam,Yosemite,68,none
-P,Harris,Kamala,59,Al,dog,Bob,dog,Carl,dog
 P,Jones,Bob,BB,none
-P,Stefani,Gwen,54,none
+P,Stefani,Gwen,54,Al,dog,Bob,dog,Carl,dog
 S,Einstein,Albert,144,4.9,none
 S,Parsons,Jim,42,4.2,Soft Kitty,cat
 S,Mouse,Mickey,91,3.5,Pete,cat

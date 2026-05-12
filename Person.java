@@ -16,7 +16,9 @@ public class Person {
         fname = f;
         lname = l;
         age = a;
+
         totalPeople++;
+        System.out.println(l + " " + totalPeople);
     }
 
     //create all getters (accessors)
@@ -32,7 +34,8 @@ public class Person {
     public void setAge(int a){age = a;}
 
     //create the print method
-    public String printPerson(){
+    @Override
+    public String toString(){
         String out = String.format("%-15s%-15s%5d\n",fname,lname, age);
         return out;
     }
